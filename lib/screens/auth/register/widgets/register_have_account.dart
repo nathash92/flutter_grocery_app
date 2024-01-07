@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_grocery_app/widgets/button/button.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginNoAccount extends StatelessWidget {
-  const LoginNoAccount({super.key});
+class RegisterHaveAccount extends StatelessWidget {
+  const RegisterHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class LoginNoAccount extends StatelessWidget {
         const Align(
           alignment: Alignment.center,
           child: Text(
-            'Do not have an account?',
+            'I already have account',
             style: TextStyle(
               color: Colors.grey,
             ),
@@ -23,11 +23,11 @@ class LoginNoAccount extends StatelessWidget {
           height: 5.0,
         ),
         AppButton(
-          label: const Text('Create Account'),
+          label: const Text('Login'),
           type: 'outline',
           isBlock: true,
           onPressed: () {
-            GoRouter.of(context).push('/auth/register');
+            GoRouter.of(context).go('/auth/login');
           },
         )
       ],

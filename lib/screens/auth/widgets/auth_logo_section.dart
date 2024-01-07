@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginLogo extends StatelessWidget {
-  const LoginLogo({super.key});
+class AuthLogoSection extends StatelessWidget {
+  const AuthLogoSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,5 +21,6 @@ class LoginLogo extends StatelessWidget {
         ),
       ),
     );
+    ;
   }
 }

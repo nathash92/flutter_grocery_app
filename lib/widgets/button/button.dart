@@ -7,6 +7,7 @@ class AppButton extends StatelessWidget {
     this.isBlock = false,
     this.type = 'filled',
     this.size = 'md',
+    required this.onPressed,
   });
 
   final Widget label;
@@ -17,11 +18,13 @@ class AppButton extends StatelessWidget {
 
   final String size;
 
+  final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     if (type == 'outline') {
       return OutlinedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: OutlinedButton.styleFrom(
           minimumSize: isBlock ? const Size.fromHeight(45) : null,
           textStyle: const TextStyle(
@@ -32,7 +35,7 @@ class AppButton extends StatelessWidget {
       );
     } else if (type == 'clear') {
       return TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           minimumSize: isBlock ? const Size.fromHeight(45) : null,
           textStyle: const TextStyle(
@@ -43,7 +46,7 @@ class AppButton extends StatelessWidget {
       );
     } else {
       return FilledButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: FilledButton.styleFrom(
           minimumSize: isBlock ? const Size.fromHeight(45) : null,
           textStyle: const TextStyle(

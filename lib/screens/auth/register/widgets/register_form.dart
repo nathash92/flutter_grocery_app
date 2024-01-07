@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_grocery_app/widgets/button/button.dart';
 import 'package:flutter_grocery_app/widgets/form/input/input.dart';
 
-class LoginForm extends StatelessWidget {
-  const LoginForm({super.key});
+class RegisterForm extends StatelessWidget {
+  const RegisterForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,23 @@ class LoginForm extends StatelessWidget {
           height: 20.0,
         ),
         const AppInput(
+          label: 'Name',
+          prefixIcon: Icons.person_outline,
+          maxLen: 10,
+        ),
+        const SizedBox(
+          height: 20.0,
+        ),
+        const AppInput(
           label: 'Password',
+          obscureText: true,
+          prefixIcon: Icons.lock_outline,
+        ),
+        const SizedBox(
+          height: 20.0,
+        ),
+        const AppInput(
+          label: 'Confirm Password',
           obscureText: true,
           prefixIcon: Icons.lock_outline,
         ),
