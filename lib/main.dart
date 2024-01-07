@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_grocery_app/screens/auth/forgot_password/fogot_password.dart';
 import 'package:flutter_grocery_app/screens/auth/login/login.dart';
 import 'package:flutter_grocery_app/screens/auth/register/register.dart';
 import 'package:flutter_grocery_app/screens/welcome/welcome.dart';
@@ -10,15 +11,19 @@ final GoRouter _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (BuildContext context, GoRouterState state) => WelcomeScreen(),
+      builder: (BuildContext context, _) => const WelcomeScreen(),
     ),
     GoRoute(
       path: '/auth/login',
-      builder: (BuildContext context, GoRouterState state) => LoginScreen(),
+      builder: (BuildContext context, _) => const LoginScreen(),
     ),
     GoRoute(
       path: '/auth/register',
-      builder: (BuildContext context, GoRouterState state) => RegisterScreen(),
+      builder: (BuildContext context, _) => const RegisterScreen(),
+    ),
+    GoRoute(
+      path: '/auth/forgot-password',
+      builder: (BuildContext context, _) => const ForgotPasswordScreen(),
     )
   ],
 );
@@ -39,7 +44,7 @@ class MainApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.green.shade900,
         ),
-        textTheme: GoogleFonts.nunitoSansTextTheme(),
+        textTheme: GoogleFonts.latoTextTheme(),
       ),
       routerConfig: _router,
     );

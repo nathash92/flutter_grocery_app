@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grocery_app/screens/auth/register/widgets/register_form.dart';
 import 'package:flutter_grocery_app/screens/auth/register/widgets/register_have_account.dart';
-import 'package:flutter_grocery_app/screens/auth/register/widgets/register_header.dart';
+import 'package:flutter_grocery_app/screens/auth/widgets/auth_header_section.dart';
 import 'package:flutter_grocery_app/screens/auth/widgets/auth_logo_section.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -19,7 +19,10 @@ class RegisterScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  RegisterHeader(),
+                  AuthHeaderSerction(
+                    title: 'Create Account',
+                    subTitle: 'Lorem Ipsum, sometimes referred to as,',
+                  ),
                   SizedBox(
                     height: 20.0,
                   ),

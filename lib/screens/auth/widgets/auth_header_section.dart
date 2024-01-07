@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
 
-class LoginWelcomeNote extends StatelessWidget {
-  const LoginWelcomeNote({super.key});
+class AuthHeaderSerction extends StatelessWidget {
+  const AuthHeaderSerction({
+    super.key,
+    required this.title,
+    required this.subTitle,
+  });
+
+  final String title;
+
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Welcome back',
-          style: TextStyle(
+          title,
+          style: const TextStyle(
             fontSize: 22.0,
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 5.0,
         ),
         Text(
-          'Lorem Ipsum, sometimes referred to as,',
-          style: TextStyle(
+          subTitle,
+          style: const TextStyle(
             fontSize: 14,
             color: Colors.grey,
           ),
