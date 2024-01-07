@@ -1,4 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_grocery_app/screens/auth/login/login.dart';
+import 'package:flutter_grocery_app/screens/welcome/welcome.dart';
+import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+final GoRouter _router = GoRouter(
+  initialLocation: '/',
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) => WelcomeScreen(),
+    ),
+    GoRoute(
+      path: '/auth/login',
+      builder: (BuildContext context, GoRouterState state) => LoginScreen(),
+    )
+  ],
+);
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +27,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.green.shade900,
         ),
+        textTheme: GoogleFonts.nunitoSansTextTheme(),
       ),
+      routerConfig: _router,
     );
   }
 }
